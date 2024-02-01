@@ -36,7 +36,7 @@ const addMccUser = catchAsyncError(async (req, res, next) => {
     console.log("defaultPassword---", defaultPassword);
 
     req.body.password = hashedPwd;
-    req.body.role = "mcc";
+    req.body.role = "mccUser";
 
     var addedMccUser = await MccUserModel.create(req.body);
     // sending email codes

@@ -5,17 +5,17 @@ const { errorHandler } = require("../utility/errorHandlerClass");
 const VeterinaryModel = require("../models/admin.model");
 const { catchAsyncError } = require("../utility/catchSync");
 const { generateRandomPassword } = require("../utility/generateRandomPassword");
-const MccUserModel = require("../models/mccUser.model");
+const VeterinaryModel = require("../models/veterian.model");
 
 //add farmer for the first time
 const addFarmer = catchAsyncError(async (req, res, next) => {
-  const mccUserEmail = req.user.email;
+  const mccEmail = req.user.email;
 
-  const mccUser = await MccUserModel.findOne({
-    email: mccUserEmail,
+  const mcc = await VeterinaryModel.findOne({
+    email: mccEmail,
   });
 
-  if (!mccUser) {
+  if (!mcc) {
     return next(
       new errorHandler(400, `Access Denied. You are not authorized.`)
     );
