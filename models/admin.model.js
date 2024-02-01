@@ -38,7 +38,7 @@ const VeterinarySchema = new Schema({
     required: true,
   },
   verified: {
-    type: String,
+    type: Boolean,
     default: false,
   },
   role: {
