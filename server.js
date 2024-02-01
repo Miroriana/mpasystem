@@ -57,10 +57,10 @@ const options = {
     },
     servers: [
       {
-         url: "https://milk-production-as.onrender.com"
+         url: "https://milk-production-as.onrender.com/"
       },
       {
-        url: "http://localhost:5678"
+        url: "http://localhost:5678/"
       },
     ],
   },
