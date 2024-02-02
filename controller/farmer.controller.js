@@ -5,7 +5,7 @@ const { errorHandler } = require("../utility/errorHandlerClass");
 const VeterinaryModel = require("../models/admin.model");
 const { catchAsyncError } = require("../utility/catchSync");
 const { generateRandomPassword } = require("../utility/generateRandomPassword");
-const VeterinaryModel = require("../models/veterian.model");
+
 
 //add farmer for the first time
 const addFarmer = catchAsyncError(async (req, res, next) => {

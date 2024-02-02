@@ -38,8 +38,9 @@ const addVeterian = catchAsyncError(async (req, res, next) => {
     var addedVeterinary = await VeterinaryModel.create(req.body);
     var senderEmail = addedVeterinary.email;
     var subject = "Finished signing up your account";
-    signUpLink = `<p> <h3>Hello Veterinary! </h3>Welcome to our Team!! Here are your credentials<br> User email: ${addedVeterinary.email} <br> Password: ${defaultPassword}  <br>  <br>   </p> <a href="http://localhost:4000/api/UH/v1/user/auth/signup">Sign in to continue</a>`;
+    signUpLink = `<p> <h3>Hello Veterinary! </h3>Welcome to our Team!! Here are your credentials<br> User email: ${addedVeterinary.email} <br> Password: ${defaultPassword}  <br>  <br>   </p> <a href="http://localhost:5173/login">Sign in to continue</a>`;
     sendEmail(senderEmail, subject, signUpLink);
+    sendVeterinaryEmail;
 
     res.status(201).json({
       message:
