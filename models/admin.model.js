@@ -43,6 +43,7 @@ const VeterinarySchema = new Schema({
   },
   role: {
     type: String,
+    required: true,
     default: "veterinary",
   },
 });

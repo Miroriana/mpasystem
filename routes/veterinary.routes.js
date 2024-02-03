@@ -11,26 +11,37 @@
  *         - password
  *         - district
  *         - sector
+ *         - role
  *         - description
  *       properties:
  *         mccName:
  *           type: string
  *           description: Name of the MCC
+ *           example: "MCC name"
  *         email:
  *           type: string
  *           description: Email of the MCC
+ *           example: "MCC email"
  *         phoneNumber:
  *           type: string
  *           description: Phone number of the MCC
+ *           example: "MCC phone number"
  *         password:
  *           type: string
  *           description: Password of the MCC
+ *           example: "MCC password"
  *         district:
  *           type: string
  *           description: District of the MCC
+ *           example: "MCC district"
  *         sector:
  *           type: string
  *           description: Sector of the MCC
+ *           example: "MCC sector"
+ *         role:
+ *           type: string
+ *           description: Role of the MCC
+ *           example: "mcc"
  */
 
 /** 

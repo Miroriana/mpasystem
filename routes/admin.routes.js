@@ -16,6 +16,7 @@
  *         - phoneNumber
  *         - province
  *         - district
+ *         - role
  *       properties:
  *         fullName:
  *           type: string
@@ -41,6 +42,10 @@
  *           type: string
  *           description: District of the veterinary
  *           example: distr1
+ *         role:
+ *           type: string
+ *           description: Role of the veterinary
+ *           example: "veterinary"
  */
 
 /**
