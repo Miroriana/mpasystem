@@ -1,6 +1,7 @@
 //registering the mcc
 // const { UserSigninSchema } = require("../utils/validation");
 const MccModel = require("../models/veterian.model");
+const UserModel = require("../models/user.model");
 // const MccModel = require("../models/veterian.model");
 const { errorHandler } = require("../utility/errorHandlerClass");
 const { catchAsyncError } = require("../utility/catchSync");
@@ -11,8 +12,9 @@ const addMcc = catchAsyncError(async (req, res, next) => {
 
   if (requestingUser.role !== "veterinary") {
     return next(
-      new errorHandler(`Access Denied. You are not authorized.`, 400)
-    );
+      new errorHandler(`Access Denied. You are not authorized.`, 400),
+      console.log(requestingUser.role),
+    ); 
   }
   const { email, ...rest } = req.body;
   // var a = UserSigninSchema.validateAsync({email:req.body.email, password: req.body.password, nationalId: req.body.nationalId});
@@ -30,7 +32,7 @@ const addMcc = catchAsyncError(async (req, res, next) => {
     console.log("defaultPassword---", defaultPassword);
 
     req.body.password = hashedPwd;
-    // req.body.role = "mcc";
+    req.body.role = "mcc";
 
     var addedMcc = await MccModel.create(req.body);
     var senderEmail = addedMcc.email;
