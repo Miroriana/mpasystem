@@ -1,3 +1,4 @@
+const { number } = require("joi");
 const { Schema, model } = require("mongoose");
 const mccSchema = new Schema({
   mccName: {
@@ -41,7 +42,7 @@ const mccSchema = new Schema({
   role:{
     type: String,
     default: "mcc",
-    required: false
+    required: true
   }
 });
 const MccModel = model("mcc", mccSchema);

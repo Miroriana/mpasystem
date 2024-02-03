@@ -10,10 +10,10 @@ const UserSchema = new Schema(
       type: String,
       required: true,
       unique: true,
-      match: [
-        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-        "Please provide a valid email",
-      ],
+      // match: [
+      //   /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+      //   "Please provide a valid email",
+      // ],
     },
     profilePicture: {
       type: String,
@@ -23,8 +23,7 @@ const UserSchema = new Schema(
     },
     role: {
       type: String,
-      enum: ["user", "admin", "veterinary", "farmer", "mcc"],
-      default: "user",
+      enum: ["admin", "veterinary", "farmer", "mcc"],
     },
     phoneNumber: {
       type: String,
@@ -51,4 +50,4 @@ const UserSchema = new Schema(
   }
 );
 const UserModel = model("user", UserSchema);
-module.exports = { UserModel };
+module.exports =  UserModel ;
